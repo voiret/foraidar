@@ -6,9 +6,9 @@ RUN apk add nginx
 RUN apk add php8 php8-fpm php8-opcache
 RUN apk add php8-gd php8-zlib php8-curl
 
-COPY default.conf /etc/nginx/conf.d/
-COPY php/ /etc/php8
-COPY index.php /usr/share/nginx/html
+COPY nginx /etc/nginx/
+COPY php /etc/php8
+COPY src /usr/share/nginx/html
 RUN mkdir /var/run/php
 EXPOSE 80
 
